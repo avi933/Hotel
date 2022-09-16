@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .home_page_image {
+            height: 20%;
+            width: 19%;
+            padding:10px;
+        }
+
+        .header {
+            padding:20px;
+        }
+
+        .september{
+            margin-left:350px;
+        }
+
+        .october{
+            margin-left:30%;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="home">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="make_booking">Book Your Stay</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="contact">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="review">Leave a Review</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <h1 class = "text-center header">Welcome to Torquay Towers!</h1>
+      <p><h4 class="text-center">Torquay Towers is the premier luxury resort in the English country side. Let us satisfy all of your needs for 
+        a relaxing and fun-filled getaway. Start your morning with our complimentary continental breakfast with authentic English cheeses, breads, fish, and coffee. 
+        Enjoy your day by the pool, spa, ocean or in town! Come with the whole family or just your special someone! Please dont hesitate to call if you have any questions!
+        We cant wait for you to join us!</h4>
+      </p>
+
+      <img class = "rounded float-left home_page_image"src="https://images.pexels.com/photos/1843244/pexels-photo-1843244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="Responsive image">
+      <img class = "rounded float-center home_page_image"src="https://images.pexels.com/photos/417172/pexels-photo-417172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="Responsive image">
+      <img class = "rounded float-center home_page_image"src="https://images.pexels.com/photos/10289311/pexels-photo-10289311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="Responsive image">
+      <img class = "rounded float-center home_page_image"src="https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="Responsive image">
+      <img class = "rounded float-right home_page_image"src="https://images.pexels.com/photos/3764568/pexels-photo-3764568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="Responsive image">
+      <br>
+      <br>
+      <p><h4 class ="text-center">Upcoming Vacancies</h4></p>
+      <div class="september"><h5>September&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;October&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;November</h5>
+      {% for date in vacancies %}
+        {{date.September}}   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{date.October}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{date.November}}
+        <br>
+      {% endfor %}
+      </div>
+
+
+
+
+
+</body>
+</html>
