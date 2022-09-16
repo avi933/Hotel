@@ -1,15 +1,17 @@
 from django.db import models
 
 class Booking(models.Model):
+    
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=20)
     email = models.EmailField()
-    number_of_person=models.IntegerField()
+    number_of_person_per_room=models.IntegerField()
     checkin_date = models.DateField()
     checkout_date = models.DateField()
     booking_date = models.DateField()
     additional_info = models.TextField()
+
     def __str__(self) :
         return f'{self.first_name} {self.last_name}'
 
@@ -32,7 +34,7 @@ class Room(models.Model):
     rt = [("std","Standard"),("de","Delux"),("sin","Single"),("db","Double")]
     room_trype = models.CharField(max_length=3, choices = rt)
     price = models.IntegerField()
-    status = models.BooleanField( default= False)
+    
 
 class Vacancies(models.Model):
     September=models.DateField()
