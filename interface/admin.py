@@ -5,4 +5,11 @@ from .models import *
 
 admin.site.register(Booking)
 admin.site.register(Staff)
+admin.site.register(Review)
+admin.site.register(Room)
+admin.site.register(Vacancies)
+admin.site.register(Contact)
+
+
+
 # admin.site.register()

@@ -33,6 +33,8 @@ class Room(models.Model):
     room_trype = models.CharField(max_length=3, choices = rt)
     price = models.IntegerField()
     status = models.BooleanField( default= False)
+    def __str__(self):
+        return f'{self.room_trype} {self.price}'
 
 class Vacancies(models.Model):
     September=models.DateField()
