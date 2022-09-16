@@ -41,6 +41,7 @@ class Room(models.Model):
         available_rooms = []
         rooms = Room.objects.all()
         for room in rooms:
+            # bookings = Booking.objects.raw('SELECT * FROM serch_rooms')
             bookings = Booking.objects.filter(
                     models.Q(room=room) & (
                     models.Q(checkin_date__gte=date_in) & models.Q(checkin_date__lte=date_out) |
@@ -74,6 +75,9 @@ class Contact(models.Model):
     last_name=models.CharField(max_length=50)
     email=models.CharField(max_length=50)
     questions=models.TextField()
+
+class index(models.Model):
+    first= models.CharField(max_length=30)
 
 
 

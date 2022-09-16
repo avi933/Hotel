@@ -1,6 +1,6 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,20 +56,20 @@
       <p><h4 class="text-center"></h4>
       </p>
 
-      <img class = "rounded float-left home_page_image" src="{% static '/static/images/Front_View.jpg' %}" alt="My image">
-      <img class = "rounded float-center home_page_image"src="{% static '/static/images/Living_Room.jpg' %}" alt="My image">
-      <img class = "rounded float-center home_page_image"src="{% static '/static/images/Dinning_Room.jpg' %}" alt="My image">
-      <img class = "rounded float-center home_page_image"src="{% static '/static/images/Torquay_Front.jpg' %}" alt="My image">
+      <img class = "rounded float-left home_page_image" src="{% static '/images/Front_View.jpg' %}" alt="My image">
+      <img class = "rounded float-center home_page_image"src="{% static '/images/Living_Room.jpg' %}" alt="My image">
+      <img class = "rounded float-center home_page_image"src="{% static '/images/Dinning_Room.jpg' %}" alt="My image">
+      <img class = "rounded float-center home_page_image"src="{% static '/images/Torquay_Front.jpg' %}" alt="My image">
       <img class = "rounded float-right home_page_image"src="https://images.pexels.com/photos/3764568/pexels-photo-3764568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="Responsive image">
       <br>
       <br>
-      <p><h4 class ="text-center">Upcoming Vacancies</h4></p>
-      <div class="september"><h5>September&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;October&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;November</h5>
-      {% for date in vacancies %}
+      <!-- <p><h4 class ="text-center">Upcoming Vacancies</h4></p>
+      <div class="september"><h5>September&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;October&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;November</h5> -->
+      <!-- {% for date in vacancies %}
         {{date.September}}   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{date.October}}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{date.November}}
         <br>
-      {% endfor %}
-      </div>
+      {% endfor %} -->
+      <!-- </div> -->
 
 
 

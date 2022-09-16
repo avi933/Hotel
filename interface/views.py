@@ -54,3 +54,7 @@ def staff_interface(request):
     context=None
     return render(request, 'staff_interface.html',context)
 
+def index (request):
+    context = None
+    return render(request,"index.html",context)
+
