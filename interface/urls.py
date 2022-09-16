@@ -5,7 +5,7 @@ from .views import visitors_page, make_booking,contact, review, show_bookings, s
 urlpatterns = [
     path('',visitors_page,name='visitors_homepage'),
     path('make_booking', make_booking, name="make_booking"),
-    path('contact', contact, name='contact'),
+    path('contact_us', contact, name='contact'),
     path('review', review, name='review'),
     path('staff_interface',staff_interface,name="staff_interface"),
     path('show_bookings', show_bookings, name="show_bookings"),
