@@ -11,6 +11,7 @@ class Booking(models.Model):
     checkout_date = models.DateField()
     booking_date = models.DateField()
     additional_info = models.TextField()
+    room = models.ForeignKey('Room',on_delete=models.CASCADE, null=True,default=None,blank=True)
 
     def __str__(self) :
         return f'{self.first_name} {self.last_name}'
@@ -35,6 +36,33 @@ class Room(models.Model):
     room_trype = models.CharField(max_length=3, choices = rt)
     price = models.IntegerField()
     
+    @classmethod
+    def search(cls,date_in,date_out):
+        available_rooms = []
+        rooms = Room.objects.all()
+        for room in rooms:
+            bookings = Booking.objects.filter(
+                    models.Q(room=room) & (
+                    models.Q(checkin_date__gte=date_in) & models.Q(checkout_date__lte=date_in) |
+                    models.Q(checkin_date__gte=date_out) & models.Q(checkout_date__lte=date_out)
+                ))
+            if(len(bookings) == 0):
+                available_rooms.append(room)
+        return available_rooms
+
+    def book(self,date_in,date_out,email):
+        b = Booking(first_name = "a",
+            last_name = "a",
+            phone_number = "a",
+            email = email,
+            number_of_person_per_room=2,
+            checkin_date = date_in,
+            checkout_date = date_out,
+            booking_date = date_in,
+            additional_info = 'a',
+            room = self)
+        b.save()
+        return b
 
 class Vacancies(models.Model):
     September=models.DateField()
