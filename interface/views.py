@@ -2,6 +2,7 @@ from ast import BoolOp
 from django.shortcuts import render, redirect
 from .models import Vacancies,Booking,Contact,Review
 from .forms import BookingForm,ContactForm, ReviewForm
+from django.http import JsonResponse
 
 # Create your views here.
 def make_booking(request):
@@ -53,4 +54,8 @@ def show_booking_by_id(request,id:int):
 def staff_interface(request):
     context=None
     return render(request, 'staff_interface.html',context)
+
+def search_room (request):   
+    return JsonResponse([{'id':'1','room_trype':'ajb'}])
+
 

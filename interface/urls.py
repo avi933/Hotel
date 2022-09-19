@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import visitors_page, make_booking,contact, review, show_bookings, staff_interface, show_booking_by_id
+from .views import search_room, visitors_page, make_booking,contact, review, show_bookings, staff_interface, show_booking_by_id
 
 urlpatterns = [
     path('',visitors_page,name='visitors_homepage'),
@@ -9,6 +9,7 @@ urlpatterns = [
     path('review', review, name='review'),
     path('staff_interface',staff_interface,name="staff_interface"),
     path('show_bookings', show_bookings, name="show_bookings"),
-    path('booking_by_id/<int:id>',show_booking_by_id,name="booking_by_id")
+    path('booking_by_id/<int:id>',show_booking_by_id,name="booking_by_id"),
+    path('search_room',search_room,name="search_room")
 
 ]
