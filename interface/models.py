@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date, datetime
 
 class Booking(models.Model):
     
@@ -9,7 +10,8 @@ class Booking(models.Model):
     number_of_person_per_room=models.IntegerField()
     checkin_date = models.DateField()
     checkout_date = models.DateField()
-    booking_date = models.DateField()
+    booking_date = models.DateField(auto_now_add=True)
+    booking_date.editable = True
     additional_info = models.TextField()
     room = models.ForeignKey('Room',on_delete=models.CASCADE, null=True,default=None,blank=True)
 
@@ -43,7 +45,6 @@ class Room(models.Model):
         available_rooms = []
         rooms = Room.objects.all()
         for room in rooms:
-            # bookings = Booking.objects.raw('SELECT * FROM serch_rooms')
             bookings = Booking.objects.filter(
                     models.Q(room=room) & (
                     models.Q(checkin_date__gte=date_in) & models.Q(checkin_date__lte=date_out) |

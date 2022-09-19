@@ -12,7 +12,7 @@ def make_booking(request):
         form=BookingForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('visitors_homepage')
+            return render(request,'visitors_interface.html')
     return render(request, 'make_booking.html', context)
 
 def visitors_page(request):
@@ -57,4 +57,3 @@ def staff_interface(request):
 def index (request):
     context = None
     return render(request,"index.html",context)
-
