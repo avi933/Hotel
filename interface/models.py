@@ -34,6 +34,7 @@ class Room(models.Model):
     rt = [("std","Standard"),("de","Delux"),("sin","Single"),("db","Double")]
     room_trype = models.CharField(max_length=3, choices = rt)
     price = models.IntegerField()
+
     def __str__(self):
         return f'{self.room_trype} {self.price}'
     
